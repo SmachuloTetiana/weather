@@ -1,17 +1,19 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-12">
-      <app-header (pageSelected)="newSelect($event)"></app-header>
-      <h2 align="left">Weather</h2>
+    <div class="col-xs-12">
+      <app-header (featureSelected)="onNavigate($event)"></app-header>
+    </div>
+  </div>
+</div>
 
-      <div class="weather"
-           *ngFor="let weather of weathers">
-        <p class="weather-city">{{ weather.name }}</p>
-        <span class="weather-temperature">{{ weather.temperature }}</span>
-      </div>
+<hr>
 
-      <app-weather-list *ngIf="loadedPage === 'weather-list'"></app-weather-list>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6">
+      <app-weather-list *ngIf="loadedFeature === 'weather-list'"></app-weather-list>
+      <p *ngIf="loadedFeature !== 'weather-list'">Content</p>
     </div>
   </div>
 </div>

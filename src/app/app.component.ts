@@ -8,21 +8,16 @@ import { Weather } from './shared/weather.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-	loadedPage = 'weather-list';
-	title = 'app';
 
-	newSelect(page: string) {
-		this.loadedPage = page;
-	}
-
-	weathers: Weather[] = [
-		new Weather('Austria', 20),
-		new Weather('Poland', 10)
-	];
+	loadedFeature = '';
 
 	constructor() { }
 
 	ngOnInit() {
+	}
+
+	onNavigate(feature: string) {
+		this.loadedFeature = feature;
 	}
 
 
